@@ -1,6 +1,15 @@
 import pyowm
 
-owm = pyowm.OWM('e52968e0024d9e1968a04ba2cd9ac45e')
+from dotenv import load_dotenv
+from pathlib import Path  # python3 only
+env_path = Path('..') / '.env'
+load_dotenv(dotenv_path=env_path)
+
+import os
+
+SECRET_KEY = os.getenv("OWM_API_KEY")
+
+owm = pyowm.OWM(SECRET_KEY)
 
 location = owm.weather_at_place('São Paulo')
 weather = location.get_weather()
