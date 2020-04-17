@@ -9,11 +9,13 @@ import os
 
 SECRET_KEY = os.getenv("OWM_API_KEY")
 
-owm = pyowm.OWM(SECRET_KEY)
+# owm = pyowm.OWM(SECRET_KEY)
 
-location = owm.weather_at_place('São Paulo')
-weather = location.get_weather()
+# location = owm.weather_at_place('São Paulo')
+# weather = location.get_weather()
 
-temp = weather.get_temperature('celsius')
+# temp = weather.get_temperature('celsius')
+
+temp={'temp': 23.99, 'temp_max': 26.11, 'temp_min': 21.0, 'temp_kf': None}
 
 print(temp)
